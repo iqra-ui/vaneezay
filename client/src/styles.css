@@ -139,7 +139,7 @@ button.btn-close:focus {
 .dropdown-menu show {
   border: 0;
 }
-*/ .navbar-nav .dropdown-menu {
+.navbar-nav .dropdown-menu {
   position: static;
   border: none;
   margin: 0px 0px 0px -55px;
