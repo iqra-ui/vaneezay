@@ -42,13 +42,13 @@ function Slider() {
       {isSmallScreen ? (
           <img
             className="h-2/5"
-            src="https://baroque.pk/cdn/shop/files/mobile_banner_10_2000x.jpg?v=1689318880"
+            src="https://baroque.pk/cdn/shop/files/mobile_banner_11_2_1780x.jpg?v=1689677401"
             
             alt="Small image"
           />
         ) : (
           <img
-            src="https://baroque.pk/cdn/shop/files/main_website_banner_10_1500x.jpg?v=1689318860"
+            src="https://baroque.pk/cdn/shop/files/main_website_banner_11_1780x.jpg?v=1689676894"
             alt="Large image"
           />
         )}
