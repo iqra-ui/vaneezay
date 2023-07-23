@@ -89,7 +89,7 @@ const Payment = () => {
                       className="btn btn-dark border-none text-white rounded-[0px] px-4 py-2 hover:bg-amber-700"
                       onClick={() =>
                         navigate("/login", {
-                          state: "/viewCart",
+                          state: "/payment",
                         })
                       }
                     >

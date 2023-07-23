@@ -200,6 +200,7 @@ function ProductLabels({}) {
           onClick={() => {
             setWish([...wish, product]);
             localStorage.setItem("wish", JSON.stringify([...wish, product]));
+            toast("Item added to successfully in wishlist");
           }}
         >
           ADD TO WISHLIST
