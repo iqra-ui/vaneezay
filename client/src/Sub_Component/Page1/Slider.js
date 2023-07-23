@@ -42,14 +42,13 @@ function Slider() {
       {isSmallScreen ? (
           <img
             className="h-2/5"
-            src="https://cdn.shopify.com/s/files/1/2277/5269/files/mobile_7e09503c-7462-419a-93d7-be60639cd494.jpg?v=1681366519
-            "
+            src="https://baroque.pk/cdn/shop/files/mobile_banner_10_2000x.jpg?v=1689318880"
+            
             alt="Small image"
           />
         ) : (
           <img
-            src="https://cdn.shopify.com/s/files/1/2277/5269/files/main_slider_desktop_hj_5736f65c-df74-4e39-bf17-c75d4ed9c804_1780x.jpg?v=1681366464
-            "
+            src="https://baroque.pk/cdn/shop/files/main_website_banner_10_1500x.jpg?v=1689318860"
             alt="Large image"
           />
         )}
