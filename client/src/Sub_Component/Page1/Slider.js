@@ -9,30 +9,51 @@ import React,{useState,useEffect} from 'react';
 
 
 function Slider() {
-
-  const [navSize, setnavSize] = useState("4rem");
-  const [navColor, setnavColor] = useState("transparent");
-  const [textColor, setText]=useState('#fff');
-  const [topNav, setTopNav]=useState(40);
+  const [isSmallScreen, setIsSmallScreen] = React.useState(false);
+  React.useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    setIsSmallScreen(mediaQuery.matches);
+    const listener = () => setIsSmallScreen(mediaQuery.matches);
+    mediaQuery.addListener(listener);
+    return () => mediaQuery.removeListener(listener);
+  }, []);
+  // const [navSize, setnavSize] = useState("4rem");
+  // const [navColor, setnavColor] = useState("transparent");
+  // const [textColor, setText]=useState('#fff');
+  // const [topNav, setTopNav]=useState(40);
   
 
-  const listenScrollEvent = () => {
-    window.scrollY > 10 ? setnavColor("#ffff") : setnavColor("transparent");
-    window.scrollY > 10 ? setnavSize("5rem") : setnavSize("4rem");
-    window.scrollY > 10 ? setText('#000'): setText('#fff');
-    window.scrollY > 10 ? setTopNav(0): setTopNav(40);
+  // const listenScrollEvent = () => {
+  //   window.scrollY > 10 ? setnavColor("#ffff") : setnavColor("transparent");
+  //   window.scrollY > 10 ? setnavSize("5rem") : setnavSize("4rem");
+  //   window.scrollY > 10 ? setText('#000'): setText('#fff');
+  //   window.scrollY > 10 ? setTopNav(0): setTopNav(40);
     
-  };
+  // };
 
-  useEffect(() => {
-    window.addEventListener("scroll", listenScrollEvent);
-    return () => {
-      window.removeEventListener("scroll", listenScrollEvent);
-    };
-  }, [])
+  // useEffect(() => {
+  //   window.addEventListener("scroll", listenScrollEvent);
+  //   return () => {
+  //     window.removeEventListener("scroll", listenScrollEvent);
+  //   };
+  // }, [])
   return (
     <div>
-
+      {isSmallScreen ? (
+          <img
+            className="h-2/5"
+            src="https://cdn.shopify.com/s/files/1/2277/5269/files/mobile_7e09503c-7462-419a-93d7-be60639cd494.jpg?v=1681366519
+            "
+            alt="Small image"
+          />
+        ) : (
+          <img
+            src="https://cdn.shopify.com/s/files/1/2277/5269/files/main_slider_desktop_hj_5736f65c-df74-4e39-bf17-c75d4ed9c804_1780x.jpg?v=1681366464
+            "
+            alt="Large image"
+          />
+        )}
+{/* 
      <Card  style={{border:0}}>
        <Carousel fade >
       <Carousel.Item>
@@ -59,89 +80,10 @@ function Slider() {
      </Carousel> 
      
       <Card.ImgOverlay className='p-0'>
-        <Card.Title>
-      {/* <nav className='fixed w-100 mx-0 ' 
-       style={{
-          backgroundColor: navColor,
-          height: navSize,
-          color: textColor,
-          transition: "all 1s",
-          top:topNav,
-          zIndex:'2'
-        }}
-        >
-
         
-        {[false].map((expand) => ( 
-        <Navbar key={expand}   expand={expand} className=" p-2  mx-0" >
-          <Container fluid  >
-          <p className='text-base mt-3 ml-5 mr-3'>MENU</p>
-            <Navbar.Toggle
-           aria-controls={`offcanvasNavbar-expand-${expand}`} 
-           className="focus:shadow-none hover:shadow-none text-black border-0"/>
-        
-            <Navbar.Brand href="#"  className='mt-0 mx-auto p-0' >
-              <img  src="https://vaneezay.com/wp-content/uploads/2022/11/logo2.png" width="100px" height="80px"/>
-            </Navbar.Brand>
-      
-           <h5 className='hover:scale-125'><AiFillHeart/></h5>
-
-            <div  className='hover:scale-125 ml-5'>
-              <h5><AiOutlineShoppingCart/></h5>
-            </div>
-
-            <div  className='hover:scale-125 ml-5'>
-              <h6><FaFacebookF/></h6>
-            </div>
-
-            <div  className='hover:scale-125 ml-5'>
-              <h5><AiOutlineInstagram/></h5>
-            </div>
-
-           
-
-           
-            <Navbar.Offcanvas 
-              id={`offcanvasNavbar-expand-${expand}`}
-              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-              placement="start"
-            >
-              <Offcanvas.Header   closeButton >
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                
-                 </Offcanvas.Title>
-              </Offcanvas.Header>
-
-              <Offcanvas.Body className='bg-dark text-white'>
-                <Nav className="justify-content-end flex-grow-1 pe-3 ">
-                  <Link to="/" >HOME</Link>
-                  <Link to="cotri">COTRI</Link>
-                  <Link to="dhannak">DHANAK</Link>
-                  <Link to="khaddar">KHADDAR</Link>
-                  <Link to="kotail">KOTAIL</Link>
-                  <Link to="kurti">KURTI</Link>
-                  <Link to="lawn">Lawn_Vol1</Link>
-                  <Link to="contact">CONTACT US</Link>
-               
-                </Nav>
-              
-              
-              </Offcanvas.Body>
-            </Navbar.Offcanvas>
-          
-          </Container>
-      
-        </Navbar>
-       
-      ))}
-      </nav> */}
-      {/* <Outlet/> */}
-   
-
-        </Card.Title>
       
       </Card.ImgOverlay>
-    </Card> 
+    </Card>  */}
   </div>
   )
 }
