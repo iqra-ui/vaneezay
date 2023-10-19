@@ -88,7 +88,7 @@ function NavigationBar() {
                 <Navbar.Brand className="mt-0 mx-auto p-0 ">
                   <Link to="/">
                     <img
-                      src="https://vaneezay.com/wp-content/uploads/2022/11/logo2.png"
+                      src="./images/logo2.png"
                       width="100px"
                       height="80px"
                     />
